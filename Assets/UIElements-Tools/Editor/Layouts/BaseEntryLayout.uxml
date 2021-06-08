@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xmlns:upm="UnityEditor.PackageManager.UI"
+
+xsi:noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd"
+xsi:schemaLocation="
+  UnityEngine.UIElements ../../../../../../../UIElementsSchema/UnityEngine.UIElements.xsd
+  UnityEditor.UIElements ../../../../../../../UIElementsSchema/UnityEditor.UIElements.xsd
+  UnityEditor.PackageManager.UI ../../../../../../../UIElementsSchema/UnityEditor.PackageManager.UI.xsd"
+>
+  <engine:VisualElement name="root_visual_container" class="fill_row min_height_40 border_grey border_bottom_2 children_align_center padding_left_4 padding_right_4">
+    <engine:Label name="name" text="Name" class="fill_row fill_shrink_1"/>
+    <engine:Button name="sort_up" class="size_24 button_base margin_left_4">
+      <engine:VisualElement class="button_sort_up size_24"/>
+    </engine:Button>
+    <engine:Button name="sort_down" class="size_24 button_base margin_left_4">
+      <engine:VisualElement class="button_sort_down size_24"/>
+    </engine:Button>
+
+  </engine:VisualElement>
+</engine:UXML>

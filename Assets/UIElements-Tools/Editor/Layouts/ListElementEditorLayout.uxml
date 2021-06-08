@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xmlns:upm="UnityEditor.PackageManager.UI"
+
+xsi:noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd"
+xsi:schemaLocation="
+  UnityEngine.UIElements ../../../../../../../UIElementsSchema/UnityEngine.UIElements.xsd
+  UnityEditor.UIElements ../../../../../../../UIElementsSchema/UnityEditor.UIElements.xsd
+  UnityEditor.PackageManager.UI ../../../../../../../UIElementsSchema/UnityEditor.PackageManager.UI.xsd"
+>
+  <engine:VisualElement name="entry_container" class="fill_column"/>
+  <engine:Button name="sort_up" class="size_20 button_base margin_left_4">
+    <engine:VisualElement class="button_sort_up size_20"/>
+  </engine:Button>
+  <engine:Button name="sort_down" class="size_20 button_base margin_left_4">
+    <engine:VisualElement class="button_sort_down size_20"/>
+  </engine:Button>
+  <engine:Button name="delete" class="button_base size_20 margin_left_8">
+    <engine:VisualElement class="button_delete size_20"/>
+  </engine:Button>
+</engine:UXML>

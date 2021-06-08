@@ -1,0 +1,43 @@
+{
+  "entries": [
+    {
+      "arenaEntry": {
+        "Name": "BlackStone",
+        "ArenaType": 0,
+        "Zombies": null,
+        "Levels": [
+          {
+            "LevelID": 0,
+            "LevelName": "Level 0",
+            "BestTime": 11220.0,
+            "AvailableFrom": ""
+          },
+          {
+            "LevelID": 1,
+            "LevelName": "Level 1",
+            "BestTime": 7200.0,
+            "AvailableFrom": ""
+          }
+        ]
+      }
+    },
+    {
+      "arenaEntry": {
+        "Name": "BlackStone",
+        "ArenaType": 1,
+        "Zombies": [
+          2,
+          0
+        ],
+        "Levels": [
+          {
+            "LevelID": 0,
+            "LevelName": null,
+            "BestTime": 0.0,
+            "AvailableFrom": ""
+          }
+        ]
+      }
+    }
+  ]
+}

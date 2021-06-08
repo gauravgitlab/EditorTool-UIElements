@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xmlns:upm="UnityEditor.PackageManager.UI"
+
+xsi:noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd"
+xsi:schemaLocation="
+  UnityEngine.UIElements ../../../../../../../UIElementsSchema/UnityEngine.UIElements.xsd
+  UnityEditor.UIElements ../../../../../../../UIElementsSchema/UnityEditor.UIElements.xsd
+  UnityEditor.PackageManager.UI ../../../../../../../UIElementsSchema/UnityEditor.PackageManager.UI.xsd"
+>
+  <editor:Toolbar name ="toolbar" class="toolbar_root">
+    <editor:ToolbarButton name="save_button" text="Save" class="root_vertical"/>
+    <editor:ToolbarButton name="export_button" text="Export" class="root_vertical"/>
+  </editor:Toolbar>
+  <engine:VisualElement name="root_visual_container" class="panel">
+    <engine:VisualElement name="entries" class="list_column fixed_width_300">
+      <engine:Label text="Entries" class="list_view__title"/>
+      <editor:Toolbar name ="entry_toolbar">
+        <editor:ToolbarButton name="add_button" text="Add" class="root_vertical"/>
+        <editor:ToolbarButton name="copy_button" text="Copy" class="root_vertical"/>
+        <editor:ToolbarButton name="delete_button" text="Delete" class="root_vertical"/>
+      </editor:Toolbar>
+      <engine:ScrollView name="entry_list" class="list_view__scroll"/>
+    </engine:VisualElement>
+    <engine:VisualElement name="rightpanel" class="root_vertical">
+      <engine:VisualElement class="fill_grow_1 list_view">
+        <engine:Label text="Heading" class="list_view__title"/>
+        <engine:ScrollView name="entry_data" class ="fill_column"/>
+      </engine:VisualElement>
+    </engine:VisualElement>
+  </engine:VisualElement>
+</engine:UXML>

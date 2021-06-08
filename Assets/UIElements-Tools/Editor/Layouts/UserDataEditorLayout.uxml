@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xmlns:upm="UnityEditor.PackageManager.UI"
+
+xsi:noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd"
+xsi:schemaLocation="
+  UnityEngine.UIElements ../../../../../../../UIElementsSchema/UnityEngine.UIElements.xsd
+  UnityEditor.UIElements ../../../../../../../UIElementsSchema/UnityEditor.UIElements.xsd
+  UnityEditor.PackageManager.UI ../../../../../../../UIElementsSchema/UnityEditor.PackageManager.UI.xsd"
+>
+  <editor:Toolbar name ="toolbar" class="toolbar_root">
+    <editor:ToolbarButton name="save_button" text="Save" class="root_vertical"/>
+  </editor:Toolbar>
+  <engine:VisualElement name="root_visual_container" class="panel">
+    <engine:VisualElement class="fill_grow_gen_info list_view fill_column">
+      <engine:Label text="Config Settings" class="list_view__title"/>
+      <engine:ScrollView name="config_info" class="padding_right_4"/>
+    </engine:VisualElement>
+  </engine:VisualElement>
+</engine:UXML>

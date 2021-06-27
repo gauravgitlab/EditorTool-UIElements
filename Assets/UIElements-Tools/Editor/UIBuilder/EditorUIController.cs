@@ -9,7 +9,7 @@ public class EditorUIController
 {
     public static EditorUIController Instance = null;
 
-    public Dictionary<string, object> DynamicFields = null;
+    //public Dictionary<string, object> DynamicFields = null;
     public List<EditorUIBuilder> UIBuilders = new List<EditorUIBuilder>();
 
     private void Init()
@@ -34,7 +34,7 @@ public class EditorUIController
         }
     }
 
-    public static void BuildUI(object sourceObject, VisualElement root, Dictionary<string, object> dynamicFields = null)
+    public static void BuildUI(object sourceObject, VisualElement root)
     {
         if (Instance == null)
         { 
@@ -42,21 +42,16 @@ public class EditorUIController
             Instance.Init();
         }
 
-        Instance.GenerateFieldElements(sourceObject, root, dynamicFields);
+        Instance.GenerateFieldElements(sourceObject, root);
     }
 
-    public void GenerateFieldElements(object sourceObject, VisualElement root, Dictionary<string, object> dynamicFields = null)
+    public void GenerateFieldElements(object sourceObject, VisualElement root)
     {
         if (sourceObject == null)
         {
             Debug.LogError("Can not generate Field Elements for null object");
             return;
         }
-
-        if (dynamicFields == null)
-            DynamicFields = new Dictionary<string, object>();
-        else
-            DynamicFields = dynamicFields;
 
         var fields = sourceObject.GetType().GetFields();
 
@@ -67,14 +62,14 @@ public class EditorUIController
 
     public void GenerateFieldElement(FieldInfo fieldInfo, object sourceObject, VisualElement root)
     {
-        Dictionary<string, object> currentElementData = new Dictionary<string, object>();
-        currentElementData.Add(EditorUIBuilder.RootElement, root);
+        //Dictionary<string, object> currentElementData = new Dictionary<string, object>();
+        //currentElementData.Add(EditorUIBuilder.RootElement, root);
 
         var uiBuilder = UIBuilders.Find(builder => builder.IsMatch(fieldInfo));
         if (uiBuilder != null)
-            uiBuilder.Process(fieldInfo, sourceObject, ref currentElementData);
+            uiBuilder.Process(fieldInfo, sourceObject, root);
 
-        if (currentElementData.ContainsKey(EditorUIBuilder.FieldElement))
-            root?.Add((VisualElement)currentElementData[EditorUIBuilder.FieldElement]);
+        //if (currentElementData.ContainsKey(EditorUIBuilder.FieldElement))
+          //  root?.Add((VisualElement)currentElementData[EditorUIBuilder.FieldElement]);
     }
 }

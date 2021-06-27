@@ -16,36 +16,9 @@ public abstract class EditorUIBuilder
         return false;
     }
 
-    public virtual void Process(FieldInfo fieldInfo, object sourceObject, ref Dictionary<string, object> currentElementData)
+    public virtual void Process(FieldInfo fieldInfo, object sourceObject, VisualElement root)
     {
 
-    }
-
-    public virtual void SetFieldElement(ref Dictionary<string, object> currentElementData, VisualElement element)
-    {
-        SetElementData(ref currentElementData, FieldElement, element);
-    }
-
-    protected virtual void SetElementData(ref Dictionary<string, object> currentElementData, string key, object value)
-    {
-        if (currentElementData.ContainsKey(key))
-            currentElementData[key] = value;
-        else
-            currentElementData.Add(key, value);
-    }
-
-    public virtual string GetElementLabel(ref Dictionary<string, object> currentElementData)
-    {
-        return (string)GetElementData(ref currentElementData, ElementLabel);
-    }
-
-    public virtual object GetElementData(ref Dictionary<string, object> currentElementData, string key)
-    {
-        if (currentElementData.ContainsKey(key))
-        {
-            return currentElementData[key];
-        }
-        return null;
     }
 
     protected static bool IsAttributeDefined<T>(FieldInfo fieldInfo) where T : Attribute

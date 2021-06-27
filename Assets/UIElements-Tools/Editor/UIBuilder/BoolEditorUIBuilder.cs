@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class BoolEditorUIBuilder : EditorUIBuilderCompType<bool>
 {
-    public override void Process(FieldInfo fieldInfo, object sourceObject, ref Dictionary<string, object> currentElementData)
+    public override void Process(FieldInfo fieldInfo, object sourceObject, VisualElement root)
     {
         var field = new Toggle(fieldInfo.Name)
         {
@@ -16,6 +16,6 @@ public class BoolEditorUIBuilder : EditorUIBuilderCompType<bool>
         field.RegisterValueChangedCallback((ChangeEvent<bool> e) => fieldInfo.SetValue(sourceObject, field.value));
         field.labelElement.AddToClassList("lable_min_width");
 
-        SetFieldElement(ref currentElementData, field);
+        root.Add(field);
     }
 }

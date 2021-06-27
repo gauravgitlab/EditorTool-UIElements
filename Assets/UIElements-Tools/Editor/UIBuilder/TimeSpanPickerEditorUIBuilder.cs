@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class TimeSpanPickerEditorUIBuilder : EditorUIBuilderCompAttributeType<TimeSpanPickerAttribute>
 {
-    public override void Process(FieldInfo fieldInfo, object sourceObject, ref Dictionary<string, object> currentElementData)
+    public override void Process(FieldInfo fieldInfo, object sourceObject, VisualElement root)
     {
         TimeSpanPickerAttribute attribute = GetAttribute<TimeSpanPickerAttribute>(fieldInfo, CompType);
 
@@ -17,6 +17,6 @@ public class TimeSpanPickerEditorUIBuilder : EditorUIBuilderCompAttributeType<Ti
             fieldInfo.SetValue(sourceObject, e.newValue);
         };
 
-        SetFieldElement(ref currentElementData, field);
+        root.Add(field);
     }
 }

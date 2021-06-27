@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class Vector3EditorUIBuilder : EditorUIBuilderCompType<Vector3>
 {
-    public override void Process(FieldInfo fieldInfo, object sourceObject, ref Dictionary<string, object> currentElementData)
+    public override void Process(FieldInfo fieldInfo, object sourceObject, VisualElement root)
     {
         Vector3Field field = new Vector3Field(fieldInfo.Name)
         {
@@ -17,6 +17,6 @@ public class Vector3EditorUIBuilder : EditorUIBuilderCompType<Vector3>
         field.RegisterValueChangedCallback((ChangeEvent<Vector3> e) => fieldInfo.SetValue(sourceObject, field.value));
         field.labelElement.AddToClassList("label_min_width");
 
-        SetFieldElement(ref currentElementData, field);
+        root.Add(field);
     }
 }

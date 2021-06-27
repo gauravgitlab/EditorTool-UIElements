@@ -10,7 +10,7 @@ public class ListEditorUIBuilder : EditorUIBuilderCompGenericValueType
 
     }
 
-    public override void Process(FieldInfo fieldInfo, object sourceObject, ref Dictionary<string, object> currentElementData)
+    public override void Process(FieldInfo fieldInfo, object sourceObject, VisualElement root)
     {
         Type generic = typeof(ListEditor<>);
         Type[] typeArgs = fieldInfo.FieldType.GetGenericArguments();
@@ -32,7 +32,7 @@ public class ListEditorUIBuilder : EditorUIBuilderCompGenericValueType
             fieldInfo.SetValue(target, newVal);
         };
 
-        SetFieldElement(ref currentElementData, field);
+        root.Add(field);
     }
 
 }

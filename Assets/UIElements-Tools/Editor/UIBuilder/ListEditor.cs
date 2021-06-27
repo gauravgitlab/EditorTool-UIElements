@@ -187,6 +187,6 @@ public class ListElementEditor<T> : LayoutVisualElement
         Button downBtn = this.Q<Button>("sort_down");
         downBtn.clickable.clicked += () => { OnShiftDown?.Invoke(this); };
 
-        EditorUIController.BuildUI(data, container, DynamicFields);
+        EditorUIController.BuildUI(data, container);
     }
 }

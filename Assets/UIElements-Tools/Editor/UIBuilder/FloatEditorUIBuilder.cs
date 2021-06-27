@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class FloatEditorUIBuilder : EditorUIBuilderCompType<float>
 {
-    public override void Process(FieldInfo fieldInfo, object sourceObject, ref Dictionary<string, object> currentElementData)
+    public override void Process(FieldInfo fieldInfo, object sourceObject, VisualElement root)
     {
         var floatField = new FloatField(fieldInfo.Name)
         {
@@ -13,6 +13,7 @@ public class FloatEditorUIBuilder : EditorUIBuilderCompType<float>
         };
         floatField.RegisterValueChangedCallback((ChangeEvent<float> e) => fieldInfo.SetValue(sourceObject, floatField.value));
         floatField.labelElement.AddToClassList("label_min_width");
-        SetFieldElement(ref currentElementData, floatField);
+
+        root.Add(floatField);
     }
 }

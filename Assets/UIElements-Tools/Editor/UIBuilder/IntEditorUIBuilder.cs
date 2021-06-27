@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class IntEditorUIBuilder : EditorUIBuilderCompType<int>
 {
-    public override void Process(FieldInfo fieldInfo, object sourceObject, ref Dictionary<string, object> currentElementData)
+    public override void Process(FieldInfo fieldInfo, object sourceObject, VisualElement root)
     {
         var field = new IntegerField(fieldInfo.Name)
         {
@@ -14,7 +14,8 @@ public class IntEditorUIBuilder : EditorUIBuilderCompType<int>
 
         field.RegisterValueChangedCallback((ChangeEvent<int> e) => fieldInfo.SetValue(sourceObject, field.value));
         field.labelElement.AddToClassList("label_min_width");
-        SetFieldElement(ref currentElementData, field);
+
+        root.Add(field);
     }
 
 

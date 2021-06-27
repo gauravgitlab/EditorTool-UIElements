@@ -30,9 +30,8 @@ public class BaseDataEditorEntry<TEntryEditorData> : LayoutVisualElement
 
     protected virtual void SetupUIFields()
     {
-        Dictionary<string, object> dynamicFields = BuildDynamicFileds();
         foreach (var obj in ObjectsToGenerateUI)
-            EditorUIController.BuildUI(obj, generalElement, dynamicFields);
+            EditorUIController.BuildUI(obj, generalElement);
     }
 
     protected virtual Dictionary<string, object> BuildDynamicFileds()
